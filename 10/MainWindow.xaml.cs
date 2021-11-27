@@ -39,20 +39,42 @@ namespace _10
             Close();
         }
 
+        List<int> mas = new List<int>(); 
         private void Добавить_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Int32.TryParse(Zn.Text, out int zn) && zn>0)
+            {
+                mas.Add(zn);
+                listBox1.Items.Add(zn);
+                int[] array = new int[mas.Count];
+                array = mas.ToArray();
+            } else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void Очистить_Click(object sender, RoutedEventArgs e)
         {
-
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
+            Rez.Clear();
+            Zn.Clear();
         }
 
 
         private void Найти_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Добавить1_Click(object sender, RoutedEventArgs e)
+        {
+            if (Int32.TryParse(Zn.Text, out int zn) && zn > 0)
+            {
+                mas.Add(zn);
+                listBox2.Items.Add(zn);
+                int[] array = new int[mas.Count];
+                array = mas.ToArray();
+            } else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            
         }
     }
 }
