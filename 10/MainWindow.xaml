@@ -26,8 +26,8 @@
         <ListBox x:Name="listBox2" HorizontalAlignment="Left" Height="304" Margin="132,61,0,0" VerticalAlignment="Top" Width="116"/>
         <GroupBox Header="Управление списком" HorizontalAlignment="Left" Height="192" Margin="253,10,0,0" VerticalAlignment="Top" Width="207" FontStyle="Italic" FontWeight="Bold" FontSize="14">
             <Grid>
-                <TextBox x:Name="Zn" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" />
-                <Label Content="Значение" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="166"/>
+                <TextBox x:Name="Zn" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" />
+                <Label Content="Значение" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="166" FontSize="14" FontStyle="Italic" FontWeight="Bold" FontFamily="Segoe UI"/>
                 <Button Content="Добавить 1" HorizontalAlignment="Left" Margin="0,74,0,0" VerticalAlignment="Top" Width="99" Click="Добавить_Click" Height="45">
                     <Button.Background>
                         <ImageBrush/>
@@ -49,7 +49,7 @@
             <Grid>
                 <Label Content="Первый № продукта" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="166"/>
                 <TextBox x:Name="Rez" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166"/>
-                <Button Content="Найти" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="166" Height="32" Click="Найти_Click">
+                <Button Content="Найти" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="175" Height="32" Click="Найти_Click">
                     <Button.Background>
                         <ImageBrush/>
                     </Button.Background>

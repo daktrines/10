@@ -38,18 +38,20 @@ namespace _10
         {
             Close();
         }
+        
+        
+        List<int> list1 = new List<int>();//создаем коллекцию list1
+        List<int> list2 = new List<int>();//создаем коллекцию list2
 
-        List<int> mas = new List<int>(); 
 
         private void Добавить_Click(object sender, RoutedEventArgs e)
         {
             if (Int32.TryParse(Zn.Text, out int zn) && zn>0)
             {
-                mas.Add(zn);
-                listBox1.Items.Add(zn);
-                int[] array = new int[mas.Count];
-                array = mas.ToArray();
-            } else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                list1.Add(zn);//добавляем элементы в коллекцию
+               listBox1.Items.Add(zn);//добавляем элементы в listBox1
+            } 
+            else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void Очистить_Click(object sender, RoutedEventArgs e)
@@ -63,31 +65,30 @@ namespace _10
 
         private void Найти_Click(object sender, RoutedEventArgs e)
         {
-            int i=0, pos;
-            int[] array1 = new int[listBox1.Items.Count];
-            int[] array2 = new int[listBox2.Items.Count];
-            listBox1.Items.CopyTo(array1, i);//копируем listBox1 в array1
-            listBox2.Items.CopyTo(array2, i);//копируем listBox2 в array2
-            for (i = 0; i < listBox1.Items.Count; i++)
+            int pos=0;
+            int[] mas1 = new int[list1.Count];//задаем размерность массиву
+            int[] mas2 = new int[list2.Count];//задаем размерность массиву
+            mas1 = list1.ToArray();//копируем элементы коллекции list1 в массив mas1
+            mas2 = list2.ToArray();//копируем элементы коллекции list2 в массив mas2
+            for (int i = 0; i < list1.Count ; i++)
             {
-                if (array1[i] > array2[i])
+                if (mas1[i] > mas2[i])
                 {
                     pos = i + 1;
-                    Rez.Text = Convert.ToString(pos);// Rez.Text = pos.ToString() тоже самое
-                    break;
+                    break;//немедленный выход из цикла
                 }
             }
+            Rez.Text = Convert.ToString(pos);// Rez.Text = pos.ToString() тоже самое
         }
 
         private void Добавить1_Click(object sender, RoutedEventArgs e)
         {
             if (Int32.TryParse(Zn.Text, out int zn) && zn > 0)
             {
-                mas.Add(zn);
-                listBox2.Items.Add(zn);
-                int[] array = new int[mas.Count];
-                array = mas.ToArray();
-            } else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                list2.Add(zn);//добавляем элементы в коллекцию
+                listBox2.Items.Add(zn);//добавляем элементы в listBox2
+            }
+            else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
