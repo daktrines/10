@@ -40,6 +40,7 @@ namespace _10
         }
 
         List<int> mas = new List<int>(); 
+
         private void Добавить_Click(object sender, RoutedEventArgs e)
         {
             if (Int32.TryParse(Zn.Text, out int zn) && zn>0)
@@ -62,7 +63,20 @@ namespace _10
 
         private void Найти_Click(object sender, RoutedEventArgs e)
         {
-
+            int i=0, pos;
+            int[] array1 = new int[listBox1.Items.Count];
+            int[] array2 = new int[listBox2.Items.Count];
+            listBox1.Items.CopyTo(array1, i);//копируем listBox1 в array1
+            listBox2.Items.CopyTo(array2, i);//копируем listBox2 в array2
+            for (i = 0; i < listBox1.Items.Count; i++)
+            {
+                if (array1[i] > array2[i])
+                {
+                    pos = i + 1;
+                    Rez.Text = Convert.ToString(pos);// Rez.Text = pos.ToString() тоже самое
+                    break;
+                }
+            }
         }
 
         private void Добавить1_Click(object sender, RoutedEventArgs e)
@@ -74,7 +88,6 @@ namespace _10
                 int[] array = new int[mas.Count];
                 array = mas.ToArray();
             } else MessageBox.Show("Введите данные!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            
         }
     }
 }
