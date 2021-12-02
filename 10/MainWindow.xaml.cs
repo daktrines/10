@@ -62,17 +62,12 @@ namespace _10
             Zn.Clear();
         }
 
-
         private void Найти_Click(object sender, RoutedEventArgs e)
         {
-            int pos=0;
-            int[] mas1 = new int[list1.Count];//задаем размерность массиву
-            int[] mas2 = new int[list2.Count];//задаем размерность массиву
-            mas1 = list1.ToArray();//копируем элементы коллекции list1 в массив mas1
-            mas2 = list2.ToArray();//копируем элементы коллекции list2 в массив mas2
+            int pos = 0;
             for (int i = 0; i < list1.Count ; i++)
             {
-                if (mas1[i] > mas2[i])
+                if (list1[i] > list2[i])
                 {
                     pos = i + 1;
                     break;//немедленный выход из цикла
