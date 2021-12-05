@@ -60,6 +60,8 @@ namespace _10
             listBox2.Items.Clear();
             Rez.Clear();
             Zn.Clear();
+            list1.Clear();
+            list2.Clear();
         }
 
         private void Найти_Click(object sender, RoutedEventArgs e)
